@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdbool.h>
+int main()
+{
+  int i = 0, j;
+  bool found = false;
+  while(!found) 
+  {
+    i++;
+    for(j = 1; j <= 20; j++)
+    {
+      if(i % j != 0)
+      
+        break;
+      
+      if(j == 20) 
+      
+        found = true;
+      
+    }
+  }
+  printf("%d\n",i);
+  return 0;
+}

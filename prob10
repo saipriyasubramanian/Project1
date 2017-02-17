@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+
+ int check_prime(unsigned long int a)
+{
+   unsigned long int c;
+ 
+   for ( c = 2 ; c <= sqrt(a); c++ )
+    { 
+        if (a % c == 0) 
+             return 0;
+    }
+    return 1;
+}
+
+int main()
+{
+  unsigned long int i,j;
+  unsigned long long int sum=0;
+  int result;
+  for(i = 2; i <= 2000000; i++)
+ {
+   result = check_prime(i);
+   if ( result == 1 )
+      sum+=i;
+ }
+ printf("%llu\n", sum);
+ return 0;
+}

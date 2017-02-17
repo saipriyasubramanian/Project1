@@ -1,0 +1,46 @@
+
+
+
+
+
+
+#include <stdio.h>
+#include <math.h>
+
+int palindrome(int);
+int  palindrome( int product)
+{
+    int temp1,reverse = 0;
+    temp1 = product;
+    
+    while(temp1 != 0)
+     {  // temp = product;
+        reverse =  reverse*10;
+        reverse = reverse + temp1%10;
+        temp1 = temp1/10;
+     } 
+  return reverse;  
+        
+}
+int main()
+{
+    int product,reverse1; int i,j,maxprod = 0;
+ for (int i = 999; i > 99; i--)
+ {
+     for (int j =i; j > 99; j--)
+     {
+         
+         product = i*j;
+         if(product < maxprod) 
+			break;
+       reverse1 =   palindrome(product);
+       if(reverse1 == product && product > maxprod )
+      { maxprod = product;
+       goto here;}
+     }
+
+ }
+  here:
+        printf("palindromeproducts =%d\n", maxprod);  
+return 0;
+}
